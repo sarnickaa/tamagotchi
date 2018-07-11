@@ -8,7 +8,7 @@
 const obj = require('./object.js')
 $(() => {
   // your JS code goes here
-})
+
 
 let generateEggButton = document.getElementById('getTamagotchiEgg')
 let generateStatsButton = document.getElementById('getTamagotchiStats')
@@ -34,7 +34,7 @@ generateEggButton.addEventListener('click', showImage)
 
   let changeImage = function() {
     tamagotchiState.src = '../../public/images/hatch_2.gif'
-    explainer.innerHTML = obj.myTamagotchi.hatch()
+    explainer.innerHTML = obj.hatch()
     generateStatsButton.style.display = 'block'
     // explainer2.innerHTML = myTamagotchi.ageStart
   }
@@ -84,3 +84,5 @@ feedButton.addEventListener('click', tamagotchiFoodLevels)
     }
   }
 ageButton.addEventListener('click', tamagotchiAge)
+
+})
