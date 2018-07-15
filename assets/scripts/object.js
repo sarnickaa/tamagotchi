@@ -159,10 +159,4 @@ class Tamagotchi {
   }
 }
 
-let name = prompt("what is your tamagotchis name?")
-
-const myTamagotchi = new Tamagotchi(name)
-
-module.exports = {
-  Tamagotchi: myTamagotchi
-}
+module.exports = Tamagotchi

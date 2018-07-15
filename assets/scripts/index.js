@@ -1,15 +1,12 @@
 'use strict'
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
+const Obj = require('./object.js')
 
-// use require without a reference to ensure a file is bundled
-// require('./example')
-const obj = require('./object.js')
+let name = prompt("what is your tamagotchis name?")
+
+const myTamagotchi = new Obj(name)
+
 $(() => {
-  // your JS code goes here
-
-
 let generateEggButton = document.getElementById('getTamagotchiEgg')
 let generateStatsButton = document.getElementById('getTamagotchiStats')
 let tamagotchiState = document.getElementById('stage')
@@ -25,58 +22,48 @@ let ageButton = document.getElementById('getTamagotchiAge')
 let showImage = function() {
   tamagotchiState.style.display = 'block'
   generateEggButton.style.display = 'none'
-  console.log(obj)
-  explainer.innerHTML = obj.new()
-
-  // nameInput.style.display = 'none'
+  explainer.innerHTML = myTamagotchi.new()
 }
 generateEggButton.addEventListener('click', showImage)
 
-  let changeImage = function() {
-    tamagotchiState.src = '../../public/images/hatch_2.gif'
-    explainer.innerHTML = obj.hatch()
-    generateStatsButton.style.display = 'block'
-    // explainer2.innerHTML = myTamagotchi.ageStart
+let changeImage = function() {
+  tamagotchiState.src = '../../public/images/hatch_2.gif'
+  explainer.innerHTML = myTamagotchi.hatch()
+  generateStatsButton.style.display = 'block'
   }
 tamagotchiState.addEventListener('click', changeImage)
 
-// const startTimer = function() {
-//   let inActivity = 120000;
-// }
-
-
-
-  let tamagotchiBaseLevels = function() {
-    tamagotchiState.src = '../../public/images/hatch_3.gif'
-    explainer.innerHTML = ''
-    generateStatsButton.style.display = 'none'
-    gameplay.style.display = 'block'
-    ageButton.style.display = 'block'
+let tamagotchiBaseLevels = function() {
+  tamagotchiState.src = '../../public/images/hatch_3.gif'
+  explainer.innerHTML = ''
+  generateStatsButton.style.display = 'none'
+  gameplay.style.display = 'block'
+  ageButton.style.display = 'block'
   }
 generateStatsButton.addEventListener('click', tamagotchiBaseLevels)
 
-  let tamagotchiPlayLevels = function() {
-    let playInput = document.getElementById('playInputField').value
-    playStatement.innerHTML = myTamagotchi.play(playInput)
+let tamagotchiPlayLevels = function() {
+  let playInput = document.getElementById('playInputField').value
+  playStatement.innerHTML = myTamagotchi.play(playInput)
+  // document.getElementById('playInputField').value("")
   }
 playButton.addEventListener('click', tamagotchiPlayLevels)
 
-  let tamagotchiCareLevels = function() {
-    let careInput = document.getElementById('careInputField').value
-    playStatement.innerHTML = obj.myTamagotchi.care(careInput)
+let tamagotchiCareLevels = function() {
+  let careInput = document.getElementById('careInputField').value
+  playStatement.innerHTML = myTamagotchi.care(careInput)
   }
 careButton.addEventListener('click', tamagotchiCareLevels)
 
-  let tamagotchiFoodLevels = function() {
-    let foodInput = document.getElementById('foodInputField').value
-    playStatement.innerHTML = obj.myTamagotchi.eat(foodInput)
-    // consequencesFood()
+let tamagotchiFoodLevels = function() {
+  let foodInput = document.getElementById('foodInputField').value
+  playStatement.innerHTML = myTamagotchi.eat(foodInput)
   }
 feedButton.addEventListener('click', tamagotchiFoodLevels)
 
-  let tamagotchiAge = function () {
-    let toggleDisplay = document.getElementById('ageDisplay')
-    toggleDisplay.innerHTML = obj.myTamagotchi.age()
+let tamagotchiAge = function () {
+  let toggleDisplay = document.getElementById('ageDisplay')
+  toggleDisplay.innerHTML = myTamagotchi.age()
     if (toggleDisplay.style.display === 'none' || toggleDisplay.style.display === '') {
         toggleDisplay.style.display = 'block'
     } else {
