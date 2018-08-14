@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>TAMAGOTCHI!</h1>
+
+<!-- <input type="text" id="nameField" placeholder="enter name!"> -->
+
+<button id="getTamagotchiEgg" type="button">Get Tamagotchi!</button>
+<button id="getTamagotchiAge" type="button">How Old Am I?</button>
+<p id="ageDisplay"></p>
+<img id="stage" src="public/images/hatch_1.gif" alt="egg">
+<p id="explain">┏(＾0＾)┛ How special are you! You've been chosen to care for a real Tamagotchi egg! OMG!! ┗(＾0＾)┓</p>
+<p id="explain2"></p>
+<button id="getTamagotchiStats" type="button">See what your Tamagotchi can do!</button>
+
+<div id="game-play">
+  <h3>Play With Your Tamagotchi</h3>
+  <input type="text" id="playInputField" onclick="this.value=''" placeholder="enter game!">
+  <button id="tamagotchiPlay" type="button">Play With Me!</button>
+  <p id="playStatement"></p>
+  <!-- eventually move this somewhere better -->
+
+  <h3>Care For Your Tamagotchi</h3>
+  <input type="text" id="careInputField" placeholder="enter care!">
+  <button id="tamagotchiCare" type="button">Care For Me!</button>
+
+  <h3>Feed Your Tamagotchi</h3>
+  <input type="text" id="foodInputField" placeholder="enter food!">
+  <button id="tamagotchiFeed" type="button">Feed Me!</button>
+</div>
+
+<!-- Modal -->
+<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">MODAL LABEL</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal end -->
+      <!-- <script src="challenge.js"></script> -->
+    </body>
+</html>
