@@ -71,5 +71,4 @@ let tamagotchiAge = function () {
     }
   }
 ageButton.addEventListener('click', tamagotchiAge)
-
 })
